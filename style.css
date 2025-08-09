@@ -1,0 +1,183 @@
+/* Importa as novas fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@700;900&display=swap');
+
+/* Configurações Globais com a nova paleta */
+body {
+    font-family: 'Lato', sans-serif; /* Fonte principal para leitura */
+    background-color: #3A0000; /* Fundo vermelho bem escuro, como na imagem */
+    color: #FFDAB9; /* Cor de texto principal (pêssego/laranja claro) */
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000000; /* Fundo preto para o cabeçalho, como na barra da imagem */
+    color: #FF0000; /* Cor vermelha para o texto do cabeçalho */
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 3px solid #FF0000;
+}
+
+header h1 {
+    font-family: 'Merriweather', serif; /* Fonte de título */
+    font-size: 2.2rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#counter-container p {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+    color: #FFDAB9;
+}
+
+#relationship-counter {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #fff;
+}
+
+#relationship-counter span {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #FFDAB9; /* Destaque no contador */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+#relationship-counter small {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: #FFDAB9;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-size: 2rem;
+    color: #FF0000; /* Títulos de seção em vermelho vivo */
+    margin-bottom: 2rem;
+}
+
+/* Estilo da Linha do Tempo */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* Código da linha vertical (escondida) */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: #FF0000;
+    display: none; /* A linha está escondida, como solicitado */
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+}
+
+.timeline-content {
+    background: #500000; /* Um vermelho um pouco mais claro para os boxes */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 1px solid #FF0000; /* Borda vermelha */
+}
+
+.timeline-content h3 {
+    font-family: 'Merriweather', serif;
+    color: #FFDAB9;
+}
+
+/* Estilo da Galeria de Fotos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-card {
+    border: 3px solid transparent; /* Borda transparente por padrão */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    transition: border 0.3s ease;
+}
+
+.gallery-card:hover {
+    border: 3px solid #FF0000; /* Borda vermelha aparece no hover */
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Oculta completamente a divisão de texto que existia antes */
+.reason-text {
+    display: none;
+}
+
+/* Estilo para os subtítulos da galeria */
+.reasons-gallery h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    color: #FFDAB9;
+    text-align: center;
+    margin-top: 3rem; /* Espaço acima do subtítulo */
+    margin-bottom: 1.5rem; /* Espaço abaixo do subtítulo */
+    border-bottom: 1px solid #500000;
+    padding-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    color: #FFDAB9;
+    opacity: 0.7;
+}
+/* --- ESTILOS DO LIGHTBOX (FOTO AMPLIADA) --- */
+
+/* O fundo escuro que cobre a página */
+.lightbox-overlay {
+    position: fixed; /* Fica fixo na tela, mesmo com rolagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Fundo preto com 85% de opacidade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que fique na frente de tudo */
+    cursor: pointer; /* Mostra que é clicável para fechar */
+}
+
+/* A imagem dentro do lightbox */
+.lightbox-overlay img {
+    max-width: 90%;   /* A imagem ocupa no máximo 90% da largura da tela */
+    max-height: 85%;  /* E no máximo 85% da altura */
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    border: 2px solid #FFDAB9; /* Uma bordinha sutil */
+}
+
+/* Classe para travar a rolagem da página quando o lightbox estiver aberto */
+body.lightbox-open {
+    overflow: hidden;
+}
